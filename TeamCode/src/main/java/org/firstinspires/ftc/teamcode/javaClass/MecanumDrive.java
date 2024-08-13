@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.util.Range;
 
 @TeleOp
-public class Mecanum extends LinearOpMode {
+public class MecanumDrive extends LinearOpMode {
 
     @Override
     public void runOpMode(){
@@ -24,9 +24,9 @@ public class Mecanum extends LinearOpMode {
 
         while (opModeIsActive()) {
 
-            double turn   =  gamepad1.right_stick_x;
-            double strafe =  gamepad1.left_stick_x;
             double drive  = -gamepad1.left_stick_y;
+            double strafe =  gamepad1.left_stick_x;
+            double turn   =  gamepad1.right_stick_x;
 
             double lfPower = Range.clip(drive + strafe + turn, -1.0, 1.0);
             double rfPower = Range.clip(drive - strafe - turn, -1.0, 1.0);
