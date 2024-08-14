@@ -22,6 +22,8 @@ public class MecanumDrive extends LinearOpMode {
         lb_drive.setDirection(DcMotorEx.Direction.REVERSE);
         rb_drive.setDirection(DcMotorEx.Direction.FORWARD);
 
+        waitForStart();
+
         while (opModeIsActive()) {
 
             double drive  = -gamepad1.left_stick_y;

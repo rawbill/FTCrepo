@@ -4,7 +4,6 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
-import com.qualcomm.robotcore.util.Range;
 
 @TeleOp
 public class TankDrive extends LinearOpMode {
@@ -18,10 +17,12 @@ public class TankDrive extends LinearOpMode {
         l_drive.setDirection(DcMotorEx.Direction.REVERSE);
         r_drive.setDirection(DcMotorEx.Direction.FORWARD);
 
+        waitForStart();
+
         while (opModeIsActive()) {
 
-            l_drive.setPower(gamepad1.left_stick_y);
-            r_drive.setPower(gamepad1.right_stick_y);
+            l_drive.setPower(-gamepad1.left_stick_y);
+            r_drive.setPower(-gamepad1.right_stick_y);
 
         }
     }
