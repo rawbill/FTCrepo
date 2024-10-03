@@ -3,7 +3,6 @@ package org.firstinspires.ftc.teamcode.javaClass;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.util.Range;
 
 @TeleOp
@@ -17,10 +16,10 @@ public class MecanumDrive extends LinearOpMode {
         DcMotor lb_drive = hardwareMap.get(DcMotor.class, "lb_drive");
         DcMotor rb_drive = hardwareMap.get(DcMotor.class, "rb_drive");
 
-        lf_drive.setDirection(DcMotorEx.Direction.REVERSE);
-        rf_drive.setDirection(DcMotorEx.Direction.FORWARD);
-        lb_drive.setDirection(DcMotorEx.Direction.REVERSE);
-        rb_drive.setDirection(DcMotorEx.Direction.FORWARD);
+        lf_drive.setDirection(DcMotor.Direction.REVERSE);
+        rf_drive.setDirection(DcMotor.Direction.FORWARD);
+        lb_drive.setDirection(DcMotor.Direction.REVERSE);
+        rb_drive.setDirection(DcMotor.Direction.FORWARD);
 
         waitForStart();
 
